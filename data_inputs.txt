@@ -1,0 +1,375 @@
+admin|add_category|whatsapprest|1234Abcd|BITES|Devilled, Fried or Curry(Sauteed with onions, capsicum and chilli)
+
+admin|add_menu_item|whatsapprest|1234Abcd|5|Chicken|-|-|LKR|1050
+
+admin|add_menu_item|whatsapprest|1234Abcd|5|Pork|-|-|LKR|1050
+
+admin|add_menu_item|whatsapprest|1234Abcd|5|Sausage|-|-|LKR|700
+
+admin|add_category|whatsapprest|1234Abcd|STEW|-
+
+admin|add_menu_item|whatsapprest|1234Abcd|6|Sea Food|-|-|LKR|1700
+
+admin|list_menu_items|whatsapprest|1234Abcd
+
+
+
+admin|add_menu_item|whatsapprest|1234Abcd|7|Boiled Vegetables|-|-|LKR|650
+
+admin|add_category|whatsapprest|1234Abcd|SOUP|\"Soup is the song of the Hearth....and the Home\" Louis P de Gouy
+
+admin|add_menu_item|whatsapprest|1234Abcd|8|Cream of Mixed Vegetable Soup|-|-|LKR|525
+
+
+admin|add_category|whatsapprest|1234Abcd|SALAD|-
+
+admin|add_menu_item|whatsapprest|1234Abcd|11|Grilled Prawns|-|-|LKR|2100
+
+
+admin|add_category|whatsapprest|1234Abcd|PIZZA ITALIANO|-
+
+admin|add_menu_item|whatsapprest|1234Abcd|15|Magarita Pizza|basils, mozarrella cheese|large|LKR|1425
+'15|Name|Description|Size|Currency|Price'
+
+
+admin|change_price|whatsapprest|1234Abcd|13|1400
+
+$price_changes = [
+	'84|1350'
+];
+
+
+$menu_items = [
+    '15|Name|Description|Size|Currency|Price'
+];
+
+# Not yet executed
+$menu_items = [
+    '15|Sausage Pizza|chicken sausages, mozzarella cheese|large|LKR|2050',
+    '15|Seafood Pizza|prawns, cuttle fish, capsicum, onion, mozzarella cheese|medium|LKR|1475',
+    '15|Seafood Pizza|prawns, cuttle fish, capsicum, onion, mozzarella cheese|large|LKR|2150',
+    '15|Pepperoni Pizza|pepperoni pork or beef, mozzarella cheese|medium|LKR|1350',
+    '15|Pepperoni Pizza|pepperoni pork or beef, mozzarella cheese|large|LKR|1900',
+    '15|Bacon Cheese Pizza|bacon, parmesan cheese, mozzarella cheese|medium|LKR|1475',
+    '15|Bacon Cheese Pizza|bacon, parmesan cheese, mozzarella cheese|large|LKR|2150',
+    '15|Polloe Fanghi Pizza|chicken, mushroom, mozzarella cheese|medium|LKR|1350',
+    '15|Polloe Fanghi Pizza|chicken, mushroom, mozzarella cheese|large|LKR|1775',
+    '15|B.B.Q Chicken Pizza|B.B.Q chicken, mozzarella cheese|medium|LKR|1350',
+    '15|B.B.Q Chicken Pizza|B.B.Q chicken, mozzarella cheese|large|LKR|1775',
+    '15|Tropical Pizza|chicken or pork ham, pineapple, mozzarella cheese|medium|LKR|1350',
+    '15|Tropical Pizza|chicken or pork ham, pineapple, mozzarella cheese|large|LKR|1775',
+    '15|Four Cheese Pizza|ricotta cheese, parmesan cheese, orgonzola cheese, mozzarella chella cheese|medium|LKR|1850',
+    '15|Four Cheese Pizza|ricotta cheese, parmesan cheese, orgonzola cheese, mozzarella chella cheese|large|LKR|2400',
+    '15|Vegetarian Pizza|bell pepper, mushroom, capsicum, onion, black, olives, mozzarella cheese|medium|LKR|1475',
+    '15|Vegetarian Pizza|bell pepper, mushroom, capsicum, onion, black, olives, mozzarella cheese|large|LKR|2125',
+    '15|Ham & Mushroom Pizza|ham chicken or pork, mushroom, mozzarella cheese|medium|LKR|1350',
+    '15|Ham & Mushroom Pizza|ham chicken or pork, mushroom, mozzarella cheese|large|LKR|1775',
+    '15|Tuna Pizza|tuna, onion, black pepper, capsicum, mozzarella cheese|medium|LKR|1350',
+    '15|Tuna Pizza|tuna, onion, black pepper, capsicum, mozzarella cheese|large|LKR|1775',
+    '15|Meat Fest Pizza|chicken, bacon, ham, seafood, sausages, onion, olives, mozzarella cheese|medium|LKR|2450',
+    '15|Meat Fest Pizza|chicken, bacon, ham, seafood, sausages, onion, olives, mozzarella cheese|large|LKR|3150',
+    '15|Nutella Pizza|nutella, marshmallow, cashew nuts|medium|LKR|1475',
+    '15|Nutella Pizza|nutella, marshmallow, cashew nuts|large|LKR|1900',
+    '15|Spice Beef Pizza|beef, capsicum, onion, green chili, mozzarella cheese|medium|LKR|1475',
+    '15|Spice Beef Pizza|beef, capsicum, onion, green chili, mozzarella cheese|large|LKR|2150',
+    '15|Bacoroni Pizza|bacon, pepperoni, mozzarella cheese|medium|LKR|1750',
+    '15|Bacoroni Pizza|bacon, pepperoni, mozzarella cheese|medium|LKR|2350',
+    '15|Thai Red Curry Chicken Pizza|thai red curry chicken, mozzarella cheese|medium|LKR|1450',
+    '15|Thai Red Curry Chicken Pizza|thai red curry chicken, mozzarella cheese|medium|LKR|1800',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|SPAGHETTI OR PENNE|-
+
+
+
+$menu_items = [
+    '16|Spaghetti Bolognese|served with tomato oncasse, beef & mozzarella cheese|-|LKR|1350',
+    '16|Spaghetti or Penne Carbonara|served with cheese sauce & bacon|-|LKR|1350',
+    '16|Spaghetti or Penne Marinara|served with calamari, fish, prawn, tomato sause|-|LKR|1350',
+    '16|Spaghetti or Napolitana|served with tomato sauce, mozzarella cheese|-|LKR|1100'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|SANDWICH CORNER|(On fresh or toasted bread and serves with french fries or salad)
+
+$menu_items = [
+    '17|Cheese & Tomato Sandwich|-|-|LKR|800',
+    '17|Tuna Sandwich|-|-|LKR|800',
+    '17|Ham & Cheese Sandwich|-|-|LKR|800',
+    '17|Pepper Egg Sandwich|-|-|LKR|750',
+    '17|Rest House Club Sandwich|-|-|LKR|850',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|BURGER CORNER|-
+
+
+$menu_items = [
+    '18|Beef Submarine|served with frenchfries|-|LKR|1000',
+    '18|Vegetable Submarine|served with frenchfries|-|LKR|750',
+    '18|Chicken Submarine|served with frenchfries|-|LKR|900',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|CHOPSUEY|-
+
+$menu_items = [
+    '19|Vegetable Chopsuey|-|-|LKR|950',
+    '19|Mix Chopsuey Rice|pork, beef, chicken, fish, sausage & egg, calamari|-|LKR|3200',
+    '19|Chicken Chopsuey Rice|-|-|LKR|1850',
+    '19|Seafood Chopsuey Rice|prawns, calamari, fish|-|LKR|2650'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|OMELETS|-
+
+$menu_items = [
+    '20|Sri Lankan Omelet|with onion, tomato & green chili|-|LKR|275',
+    '20|Cheese & Tomato Omelet|-|-|LKR|425',
+    '20|Chicken Omelet|-|-|LKR|375',
+    '20|Cheese & Chicken Omelet|-|-|LKR|475',
+    '20|Vegetable Omelet|-|-|LKR|325'
+];
+
+admin|add_category|whatsapprest|1234Abcd|QUENCH YOUR THIRST|FRESH FRUIT JUICE (Availability may be seasonal)
+
+$menu_items = [
+    '21|Pineapple Juice|-|-|LKR|450',
+    '21|Papaya Juice|-|-|LKR|350',
+    '21|Mango Juice|-|-|LKR|400',
+    '21|Banana Juice|-|-|LKR|300',
+    '21|Orange Juice|-|-|LKR|450',
+    '21|Avocado Juice|-|-|LKR|400',
+    '21|Lime Juice|-|-|LKR|450',
+    '21|Mocktail Mixture of Seasonal Fruits|-|-|LKR|550',
+    '21|King Coconut Water|-|-|LKR|250',
+];
+
+admin|add_category|whatsapprest|1234Abcd|SMOOTHIES & MILK SHAKE|-
+
+$menu_items = [
+    '22|Milk Shakes & Lassies|banana, papaya, pineapple, orange|-|LKR|550',
+    '22|Smoothies|pineapple, banana, mango|-|LKR|550'
+];
+
+admin|add_category|whatsapprest|1234Abcd|SOFT DRINKS|-
+
+$menu_items = [
+    '23|Coca Cola|-|-|LKR|225',
+    '23|Pepsi|-|-|LKR|225',
+    '23|Sprite|-|-|LKR|225',
+    '23|Lemonade|-|-|LKR|225',
+    '23|Ginger Beer|-|-|LKR|225',
+    '23|Cream Soda|-|-|LKR|225',
+    '23|Club Soda|-|-|LKR|225',
+    '23|Water (1L)|-|-|LKR|175'
+];
+
+admin|add_category|whatsapprest|1234Abcd|TEA|-
+
+
+$menu_items = [
+    '24|Pot of Tea|-|-|LKR|550',
+    '24|Green Tea|-|-|LKR|400'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|COFFEE|-
+
+$menu_items = [
+    '25|Milk Coffee|-|-|LKR|300',
+    '25|Espresso|-|-|LKR|500',
+    '25|Cappuccino|-|-|LKR|550',
+    '25|Cafe Latte|-|-|LKR|550',
+];
+
+admin|add_category|whatsapprest|1234Abcd|BREAKFAST|-
+
+$menu_items = [
+    '26|Western Breakfast|Fresh fruit platter, toasted bread with butter and jam, boiled/fried/scrambled/omelet(mention in the instructions step) egg, sausages/grilled tomato tea or coffee|-|LKR|1000'
+];
+
+admin|add_category|whatsapprest|1234Abcd|LUNCH OR DINNER|-
+
+$menu_items = [
+    '27|Pasta|Soup of the day or salad, spaghetti or macaroni with carbonara or napoletano sauce, tropical fruit or ice cream(mention your choice in the instructions step)|-|LKR|2300'
+];
+
+admin|add_category|whatsapprest|1234Abcd|DESSERT|-
+
+
+$menu_items = [
+    '28|Platter of seasonllay available fresh fruit|-|-|LKR|370',
+    '28|Ice Cream|vanilla|-|LKR|300',
+    '28|Ice Cream|chocolate|-|LKR|300',
+    '28|Ice Cream|fruit & nut|-|LKR|300',
+    '28|Curd & Treacle|-|-|LKR|300',
+    '28|Watalappan|-|-|LKR|250',
+    '28|Banana fritters with Vanilla Ice Cream|-|-|LKR|350',
+    '28|Cream Caramel|-|-|LKR|350'
+];
+
+
+
+admin|add_category|whatsapprest|1234Abcd|LOCAL BEER|-
+
+
+$menu_items = [
+    '29|Lion Larger|-|-|LKR|550',
+    '29|Lion Stout|-|-|LKR|550',
+    '29|Lion Strong|-|-|LKR|575',
+    '29|Tiger Beer|-|-|LKR|550',
+    '29|Carlsberg Beer|-|-|LKR|550',
+    '29|Carlsberg Special Brew|-|-|LKR|625',
+    '29|Anchor Beer|-|-|LKR|550'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|IMPORTED BEER|-
+
+$menu_items = [
+    '30|Corona|-|-|LKR|875',
+    '30|Heineken|-|-|LKR|875',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|ARRACK SRI LANKAN|-
+
+$menu_items = [
+    '31|Old Arrack|-|100ml|LKR|500',
+    '31|Old Arrack|-|375ml|LKR|1800',
+    '31|Old Arrack|-|bottle|LKR|3450',
+    '31|Old Reserve|-|100ml|LKR|575',
+    '31|Old Reserve|-|375ml|LKR|2000',
+    '31|Old Reserve|-|bottle|LKR|3600',
+    '31|Black Opel|-|100ml|LKR|500',
+    '31|Black Opel|-|375ml|LKR|1800',
+    '31|Black Opel|-|bottle|LKR|3450',
+    '31|RCA Double Distilled|-|100ml|LKR|500',
+    '31|RCA Double Distilled|-|375ml|LKR|1850',
+    '31|RCA Double Distilled|-|bottle|LKR|3500',
+    '31|White Label|-|100ml|LKR|500',
+    '31|White Label|-|375ml|LKR|1700',
+    '31|White Label|-|bottle|LKR|3200'
+];
+
+admin|add_category|whatsapprest|1234Abcd|LOCAL WHISKY|-
+
+$menu_items = [
+    '32|V&A|-|100ml|LKR|575',
+    '32|V&A|-|375ml|LKR|1900',
+    '32|V&A|-|bottle|LKR|3700',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|REGULAR WHISKY|-
+
+
+$menu_items = [
+    '33|Red Label|-|100ml|LKR|1425',
+    '33|Red Label|-|bottle|LKR|10200',
+    '33|Vat 69|-|100ml|LKR|1025',
+    '33|Vat 69|-|bottle|LKR|7900',
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|PREMIUM WHISKY|-
+
+
+$menu_items = [
+    '34|J.D. Black Label|-|100ml|LKR|1975',
+    '34|J.D. Black Label|-|bottle|LKR|14700',
+    '34|Gold Label|-|100ml|LKR|3025',
+    '34|Gold Label|-|bottle|LKR|20200',
+    '34|Chivas Regal|-|100ml|LKR|2225',
+    '34|Chivas Regal|-|bottle|LKR|16200'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|BOURBON & TENNESSEE|-
+
+
+$menu_items = [
+    '35|Jack Daniels|-|100ml|LKR|1975',
+    '35|Jack Daniels|-|bottle|LKR|14200'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|LOCAL BRANDY|-
+
+$menu_items = [
+    '36|Ritz Brandy|-|100ml|LKR|575',
+    '36|Ritz Brandy|-|bottle|LKR|3700',
+    '36|Gallery|-|100ml|LKR|575',
+    '36|Gallery|-|bottle|LKR|3900',
+];
+
+admin|add_category|whatsapprest|1234Abcd|COGNAC|-
+
+$menu_items = [
+    '37|Hennessy|-|100ml|LKR|2625',
+    '37|Hennessy|-|bottle|LKR|18000'
+];
+
+
+
+admin|add_category|whatsapprest|1234Abcd|LOCAL GIN|-
+
+$menu_items = [
+    '38|Rockland Dry Gin|-|100ml|LKR|575',
+    '38|Rockland Dry Gin|-|bottle|LKR|4200',
+    '38|Rockland Lemon Gin|-|100ml|LKR|575',
+    '38|Rockland Lemon Gin|-|bottle|LKR|4200'
+];
+
+
+
+admin|add_category|whatsapprest|1234Abcd|LOCAL GIN|-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

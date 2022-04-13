@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Lib/vendor/notifylk/notify-php" />
+      <path value="$PROJECT_DIR$/Lib/vendor/composer" />
+      <path value="$PROJECT_DIR$/Lib/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/Lib/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/Lib/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/Lib/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/Lib/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/Lib/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/Lib/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/Lib/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/Lib/vendor/egulias/email-validator" />
+    </include_path>
+  </component>
+</project>
