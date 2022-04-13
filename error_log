@@ -1,0 +1,47 @@
+[05-Apr-2022 12:54:38 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 12:54:38 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:21:48 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:21:48 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:22:01 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:22:01 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:28:07 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:28:07 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:31:59 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:31:59 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:32:02 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:32:02 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:32:46 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:32:46 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:34:40 Europe/London] PHP Warning:  require_once(./../config.php): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:34:40 Europe/London] PHP Fatal error:  require_once(): Failed opening required './../config.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 2
+[05-Apr-2022 13:40:29 Europe/London] PHP Warning:  file_put_contents(/home/resthous/api.resthousetangalle.com/inc/..../logs/api.log): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Lib/Logger.php on line 19
+[05-Apr-2022 13:40:40 Europe/London] PHP Warning:  file_put_contents(/home/resthous/api.resthousetangalle.com/inc/..../logs/api.log): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Lib/Logger.php on line 19
+[05-Apr-2022 13:45:41 Europe/London] PHP Fatal error:  Uncaught Exception: Unable to do prepared statement: SELECT * FROM whatsapp_users ORDER BY user_id ASC LIMIT ? in /home/resthous/api.resthousetangalle.com/Model/Database.php:29
+Stack trace:
+#0 /home/resthous/api.resthousetangalle.com/Model/UserModel.php(8): Database->select('SELECT * FROM w...', Array)
+#1 /home/resthous/api.resthousetangalle.com/Controller/Api/UserController.php(25): UserModel->getUsers(10)
+#2 /home/resthous/api.resthousetangalle.com/index.php(17): UserController->listAction()
+#3 {main}
+  thrown in /home/resthous/api.resthousetangalle.com/Model/Database.php on line 29
+[06-Apr-2022 06:19:59 Europe/London] PHP Warning:  file_put_contents(/home/resthous/api.resthousetangalle.com/inc/..../logs/api.log): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Lib/Logger.php on line 19
+[06-Apr-2022 06:19:59 Europe/London] PHP Notice:  Array to string conversion in /home/resthous/api.resthousetangalle.com/Controller/Api/BaseController.php on line 53
+[06-Apr-2022 06:20:06 Europe/London] PHP Warning:  file_put_contents(/home/resthous/api.resthousetangalle.com/inc/..../logs/api.log): failed to open stream: No such file or directory in /home/resthous/api.resthousetangalle.com/Lib/Logger.php on line 19
+[06-Apr-2022 06:20:06 Europe/London] PHP Notice:  Array to string conversion in /home/resthous/api.resthousetangalle.com/Controller/Api/BaseController.php on line 53
+[06-Apr-2022 06:22:18 Europe/London] PHP Notice:  Array to string conversion in /home/resthous/api.resthousetangalle.com/Controller/Api/BaseController.php on line 53
+[06-Apr-2022 06:23:21 Europe/London] PHP Notice:  Array to string conversion in /home/resthous/api.resthousetangalle.com/Controller/Api/BaseController.php on line 53
+[06-Apr-2022 07:00:31 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined method LogModel::insert() in /home/resthous/api.resthousetangalle.com/Model/LogModel.php:9
+Stack trace:
+#0 /home/resthous/api.resthousetangalle.com/Lib/Logger.php(20): LogModel->insert_log('2022-04-06 07:0...')
+#1 /home/resthous/api.resthousetangalle.com/Lib/Logger.php(9): Logger::log('test message', 'INFO')
+#2 /home/resthous/api.resthousetangalle.com/Controller/Api/UserController.php(12): Logger::info('test message')
+#3 /home/resthous/api.resthousetangalle.com/index.php(17): UserController->listAction()
+#4 {main}
+  thrown in /home/resthous/api.resthousetangalle.com/Model/LogModel.php on line 9
+[06-Apr-2022 07:02:38 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined method LogModel::insert() in /home/resthous/api.resthousetangalle.com/Model/LogModel.php:9
+Stack trace:
+#0 /home/resthous/api.resthousetangalle.com/Lib/Logger.php(21): LogModel->insert_log('2022-04-06 07:0...')
+#1 /home/resthous/api.resthousetangalle.com/Lib/Logger.php(9): Logger::log('test message', 'INFO')
+#2 /home/resthous/api.resthousetangalle.com/Controller/Api/UserController.php(12): Logger::info('test message')
+#3 /home/resthous/api.resthousetangalle.com/index.php(17): UserController->listAction()
+#4 {main}
+  thrown in /home/resthous/api.resthousetangalle.com/Model/LogModel.php on line 9
