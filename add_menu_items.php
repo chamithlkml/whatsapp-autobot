@@ -8,8 +8,10 @@ $food_model = new OrderModel();
 //];
 
 $menu_items = [
-    '44|Gold Leaf|-|12 pack|LKR|960',
-    '44|Dunhill|-|20 pack|LKR|1700',
+    '48|Deluxe Family|4 persons max|room only|LKR|9900|2',
+    '48|Deluxe Family|4 persons max|bread & breakfast|LKR|12025|2',
+    '48|Deluxe Family|4 persons max|half board|LKR|18295|2',
+    '48|Deluxe Family|4 persons max|full board|LKR|21430|2',
 ];
 
 foreach($menu_items as $menu_item){
@@ -21,6 +23,7 @@ foreach($menu_items as $menu_item){
         $chunks[2],#Description
         $chunks[3],#Size
         $chunks[4],#Currency
-        $chunks[5]#Price
+        $chunks[5],#Price
+        $chunks[6]#Type
     );
 }

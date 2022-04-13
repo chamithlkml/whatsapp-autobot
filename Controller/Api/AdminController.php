@@ -47,7 +47,7 @@ class AdminController extends BaseController
         $wa_request_model = new WARequestModel();
         $wa_request_model->store_request($data->query->sender, $data->query->ruleId, $data->query->message);
 
-        $validated_resp = $this->validate_input($data->query->message, 'add_menu_item', 10);
+        $validated_resp = $this->validate_input($data->query->message, 'add_menu_item', 11);
 
         if(!$validated_resp->valid)
         {
@@ -58,7 +58,7 @@ class AdminController extends BaseController
                 $item_chunks = explode("|", $data->query->message);
 
                 $order_model = new OrderModel();
-                $order_model->addMenuItem($item_chunks[4], $item_chunks[5], $item_chunks[6], $item_chunks[7], $item_chunks[8], $item_chunks[9]);
+                $order_model->addMenuItem($item_chunks[4], $item_chunks[5], $item_chunks[6], $item_chunks[7], $item_chunks[8], $item_chunks[9], $item_chunks[10]);
 
                 $this->sendResponse(
                     $this->getMenuItemsListingMessage(1)
@@ -122,6 +122,29 @@ class AdminController extends BaseController
             $message .= $this->getMenuItemsListingMessage(1);
 
             $this->sendResponse($message);
+        }
+    }
+
+    public function list_roomsAction()
+    {
+        $data = json_decode(file_get_contents("php://input"));
+
+        $wa_request_model = new WARequestModel();
+        $wa_request_model->store_request($data->query->sender, $data->query->ruleId, $data->query->message);
+
+        $validated_resp = $this->validate_input($data->query->message, 'list_rooms', 4);
+
+        if(!$validated_resp->valid)
+        {
+            $this->sendError($validated_resp->errors);
+        }
+        else
+        {
+            $message = $this->getMenuItemsListingMessage(2);
+
+            $this->sendResponse(
+                $message
+            );
         }
     }
 

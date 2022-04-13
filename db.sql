@@ -27,6 +27,7 @@ CREATE TABLE `whatsapp_item_categories` (
   `category_name` varchar (64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` varchar (256) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `created_on` DATETIME,
+   `type` int (10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

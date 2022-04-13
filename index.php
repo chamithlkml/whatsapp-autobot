@@ -6,8 +6,8 @@ require __DIR__ . "/inc/bootstrap.php";
     $uri = explode( '/', $uri );
 
     $valid_actions = [
-        'order' => ['select_option', 'set_name', 'choice', 'name', 'set_address', 'quantity', 'item', 'menu', 'confirm', 'email', 'rooms', 'room_quantity', 'add_room', 'rooms_menu', 'complete_room_reservation'],
-        'admin' => ['validate_user', 'validate_password', 'create_category', 'list_categories', 'add_menu_item', 'list_menu_items', 'change_price']
+        'order' => ['select_option', 'set_name', 'choice', 'name', 'address', 'quantity', 'item', 'menu', 'confirm', 'email', 'rooms', 'room_quantity', 'add_room', 'rooms_menu', 'complete_room_reservation'],
+        'admin' => ['validate_user', 'validate_password', 'create_category', 'list_categories', 'add_menu_item', 'list_menu_items', 'change_price', 'list_rooms']
     ];
 
 

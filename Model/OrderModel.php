@@ -190,7 +190,7 @@ class OrderModel extends Database
     {
         $order_id = $this->getOrderID($sender);
 
-        return $this->select("select wmi.item_name, wmi.size, wmi.currency, wmi.unit_price, woi.quantity, woi.sub_total 
+        return $this->select("select wmi.item_name, wmi.size, wmi.currency, wmi.unit_price, wmi.description, woi.quantity, woi.sub_total 
                         from whatsapp_order_items AS woi INNER JOIN whatsapp_menu_items AS wmi ON woi.menu_item_id=wmi.id 
                         where woi.order_id = ? order by woi.id asc", ["d", intval($order_id)]);
 
@@ -250,9 +250,9 @@ class OrderModel extends Database
 
     }
 
-    public function getCategories()
+    public function getCategories($type=1)
     {
-        return $this->select("select * from whatsapp_item_categories where true order by id asc", []);
+        return $this->select("select * from whatsapp_item_categories where type=? order by id asc", ["i", $type]);
     }
 
     public function getMaxMenuItemCode(){
@@ -261,7 +261,7 @@ class OrderModel extends Database
         return count($max_codes) == 0 ? 0 : $max_codes[0]['max_code'];
     }
 
-    public function addMenuItem($category_id, $item_name, $description, $size, $currency, $price)
+    public function addMenuItem($category_id, $item_name, $description, $size, $currency, $price, $type)
     {
         $max_code = $this->getMaxMenuItemCode();
         Logger::info('max code: ' . $max_code);
@@ -275,7 +275,7 @@ class OrderModel extends Database
         $stmt = $this->connection->prepare("INSERT INTO whatsapp_menu_items (type, code, item_name, size, currency, unit_price, category_id, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ddsssdds", $i_type, $i_code, $i_item_name, $i_size, $i_currency, $i_unit_price, $i_category_id, $i_description);
 
-        $i_type = 1;
+        $i_type = intval($type);
         $i_code = $new_code;
         $i_item_name = $item_name;
         $i_size = $size;
@@ -302,7 +302,7 @@ class OrderModel extends Database
     {
         $result = [];
 
-        $categories = $this->getCategories();
+        $categories = $this->getCategories($type);
 
         foreach($categories as $category)
         {
