@@ -294,9 +294,10 @@ class OrderController extends BaseController
 
         $code = $data->query->message;
         $menu_item = $order_model->getMenuItemByCode($code);
+        $category = $order_model->getCategory($menu_item['category_id']);
 
         $reply = new stdClass();
-        $reply->message = "How many " . $menu_item['item_name'] . " [" . $menu_item['size'] . "](s) do you need.?";
+        $reply->message = "How many " . $category['category_name'] . ": " . $menu_item['item_name'] . " [" . $menu_item['size'] . "](s) do you need.?";
 
         $responseData = json_encode(array(
             'replies' => array(
@@ -321,8 +322,8 @@ class OrderController extends BaseController
 
         $reply = new stdClass();
         $message = "Item added to the order. Select your choice. \n";
-        $message .= "[1] See the menu\n";
-        $message .= "[2] Complete order";
+        $message .= "1. See the menu\n";
+        $message .= "2. Complete order";
 
         $reply->message = $message;
 

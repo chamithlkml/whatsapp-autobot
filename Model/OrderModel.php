@@ -114,6 +114,17 @@ class OrderModel extends Database
         return $menu_items[0];
     }
 
+    public function getCategory($category_id)
+    {
+        $categories = $this->select("select * from whatsapp_item_categories where id=? ", ["i", intval($category_id) ]);
+
+        if(count($categories) == 0){
+            throw new Exception('Category not found');
+        }
+
+        return $categories[0];
+    }
+
     public function addItemToOrder($sender, $code)
     {
         $order_id = $this->getOrderID($sender);
