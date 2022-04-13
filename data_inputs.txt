@@ -325,47 +325,97 @@ $menu_items = [
 
 
 
-admin|add_category|whatsapprest|1234Abcd|LOCAL GIN|-
+admin|add_category|whatsapprest|1234Abcd|LOCAL VODKA|-
+
+
+$menu_items = [
+    '39|Celebration Vodka|-|100ml|LKR|575',
+    '39|Celebration Vodka|-|bottle|LKR|3600',
+    '39|Roskaa Vodka|-|100ml|LKR|575',
+    '39|Roskaa Vodka|-|bottle|LKR|3600'
+];
+
+
+admin|add_category|whatsapprest|1234Abcd|IMPORTED VODKA|-
 
 
 
+$menu_items = [
+    '40|Smirnoff|-|100ml|LKR|1175',
+    '40|Smirnoff|-|bottle|LKR|9050',
+    '40|Absolute|-|100ml|LKR|1175',
+    '40|Absolute|-|bottle|LKR|9050'
+];
 
 
 
+admin|add_category|whatsapprest|1234Abcd|LOCAL RUM|-
 
 
+$menu_items = [
+    '41|Rockland White Rum|-|100ml|LKR|575',
+    '41|Rockland White Rum|-|bottle|LKR|4200',
+    '41|Rockland Red Rum|-|100ml|LKR|575',
+    '41|Rockland Red Rum|-|bottle|LKR|4200'
+];
 
 
+admin|add_category|whatsapprest|1234Abcd|IMPORTED RUM|-
+
+$menu_items = [
+    '42|Bacardi White|-|100ml|LKR|1325',
+    '42|Bacardi White|-|bottle|LKR|9700',
+    '42|Caption Morgan|-|100ml|LKR|1325',
+    '42|Caption Morgan|-|bottle|LKR|9700'
+];
+
+admin|add_category|whatsapprest|1234Abcd|WINE|-
+
+$menu_items = [
+    '43|White Wine|-|bottle|LKR|2050',
+    '43|Glass of White Wine|-|150ml|LKR|650',
+    '43|Red Wine|-|bottle|LKR|2050',
+    '43|Glass of Red Wine|-|150ml|LKR|650',
+    '43|Glass of Sparkling Wine|-|150ml|LKR|650'
+];
 
 
+admin|add_category|whatsapprest|1234Abcd|CIGARETTES|-
 
 
+$menu_items = [
+    '44|Gold Leaf|-|12 pack|LKR|960',
+    '44|Dunhill|-|20 pack|LKR|1700',
+];
 
+admin|add_category|whatsapprest|1234Abcd|COCKTAILS|-
 
+$menu_items = [
+    '46|Mojito|-|-|LKR|720|1',
+    '46|Singapore Sling|-|-|LKR|990|1',
+    '46|Arrack Sour|-|-|LKR|630|1',
+    '46|Pinacolada|-|-|LKR|640|1',
+    '46|Whisky Sour|-|-|LKR|890|1',
+    '46|Manhatan|-|-|LKR|1100|1',
+    '46|Magarita|-|-|LKR|1190|1',
+    '46|Long Island Iced Tea|-|-|LKR|1690|1',
+    '46|Espresso Martini|-|-|LKR|1450|1',
+    '46|Arrack ginger blast|-|-|LKR|630|1',
+    '46|Barman's knockout|-|-|LKR|990|1',
+];
 
+admin|add_category|whatsapprest|1234Abcd|MOCKTAILS|-
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$menu_items = [
+    '47|Cindarella|-|-|LKR|560|1',
+    '47|Watermelon sunset|-|-|LKR|450|1',
+    '47|Lime mintcooler|-|-|LKR|450|1',
+    '47|Blueberry mintcooler|-|-|LKR|600|1',
+    '47|Blue Lemonade|-|-|LKR|540|1',
+    '47|Red lady|-|-|LKR|560|1',
+    '47|Vergine mojito|-|-|LKR|450|1',
+    '47|Soda lime|-|-|LKR|450|1'
+];
 
 
 

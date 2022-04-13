@@ -31,6 +31,21 @@ class OrderController extends BaseController
                 }
     }
 
+    public function nameAction()
+    {
+        $data = json_decode(file_get_contents("php://input"));
+        Logger::info('post_data: ' . print_r($data, true));
+
+        $wa_request_model = new WARequestModel();
+        $wa_request_model->store_request($data->query->sender, $data->query->ruleId, $data->query->message);
+
+        $order_model = new OrderModel();
+        $order_model->createOrder($data->query->sender, 1);
+        $this->sendResponse("Please enter your name");
+
+    }
+
+
     public function set_nameAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -73,8 +88,6 @@ class OrderController extends BaseController
         $order_model = new OrderModel();
         $order_model->setAddressToOrder($data->query->sender, $data->query->message);
 
-        $category_menu_items = $order_model->getCategoryMenuItems(1);
-
         $message = "Here are our Food and Drinks menu.\n";
 
         $message .= $this->getMenuItemsListingMessage(1);
@@ -82,7 +95,7 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
-    public function set_addressAction()
+    public function addressAction()
     {
         $data = json_decode(file_get_contents("php://input"));
 
@@ -90,28 +103,9 @@ class OrderController extends BaseController
         $wa_request_model->store_request($data->query->sender, $data->query->ruleId, $data->query->message);
 
         $order_model = new OrderModel();
-        $order = $order_model->getOrder($data->query->sender);
+        $order_model->setNameToOrder($data->query->sender, $data->query->message);
 
-
-        if($order['type'] == 1)
-        {
-            $order_model->setAddressToOrder($data->query->sender, $data->query->message);
-        }
-        else if($order['type'] == 2 || $order['type'] == 3)
-        {
-            $this->validate_email($data->query->message);
-            $order_model->setEmailToOrder($data->query->sender, $data->query->message);
-        }
-
-        $message = "";
-
-        if($order['type'] == 1 || $order['type'] == 2)
-        {
-            $message .=  "Here are our food and drinks categories.\n";
-            $message .= $order['type'] == 2 ? "Note: Subjected to 10% service charge.\n" : "";
-
-
-        }
+        $this->sendResponse("Please enter your delivery address");
     }
 
     public function emailAction()
@@ -149,30 +143,9 @@ class OrderController extends BaseController
         $room_model = new RoomModel();
         $room_model->setEmailToOrder($data->query->sender, $data->query->message);
 
-        $order_model = new OrderModel();
-        # Get rooms
-        $menu_items = $order_model->getMenuItems(2);
+        $message = $this->getMenuItemsListingMessage(2);
 
-        $menu = "Here is the list of rooms we have for you. Please enter the code of your room choice. \n";
-
-        foreach ($menu_items as $menu_item)
-        {
-            $menu .= "[" . $menu_item['code'] . "] " . $menu_item['item_name'] . " (" . $menu_item['size'] . ") - " . $menu_item['currency'] . " " . $menu_item['unit_price'] . "\n";
-        }
-
-        $reply = new stdClass();
-        $reply->message = $menu;
-
-        $responseData = json_encode(array(
-            'replies' => array(
-                $reply
-            )
-        ));
-
-        $this->sendOutput(
-            $responseData,
-            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-        );
+        $this->sendResponse($message);
     }
 
     public function room_quantityAction()
@@ -189,17 +162,11 @@ class OrderController extends BaseController
         $menu_item = $order_model->getMenuItemByCode($code);
 
         $reply = new stdClass();
-        $reply->message = "How many " . $menu_item['item_name'] . " rooms do you need.?";
+        $description = $menu_item['description'] == "" ? "" : " - " . $menu_item['description'];
+        $size = $menu_item['size'] == '-' ? "":" (" . $menu_item['size'] . ")";
+        $message = "How many " . $menu_item['item_name'] . $description . $size . "(s) do you need.?";
 
-        $responseData = json_encode(array(
-            'replies' => array(
-                $reply
-            )
-        ));
-        $this->sendOutput(
-            $responseData,
-            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-        );
+        $this->sendResponse($message);
     }
 
     public function add_roomAction(){
@@ -214,8 +181,8 @@ class OrderController extends BaseController
 
         $reply = new stdClass();
         $message = "Room(s) reserved. Select your choice. \n";
-        $message .= "[1] See the menu\n";
-        $message .= "[2] Complete reservation";
+        $message .= "1. See the menu\n";
+        $message .= "2. Complete reservation";
 
         $reply->message = $message;
 
@@ -261,8 +228,10 @@ class OrderController extends BaseController
         $total = 0;
 
         foreach($order_items as $order_item){
-            $message .= "- " . $order_item['item_name'] . " " . $order_item['quantity'] . " Nos: " . $order_item['sub_total'] . " ". $order_item['currency'] . "\n";
-            $email_message .= '<li>' . $order_item['item_name'] . " " . $order_item['quantity'] . " Nos: " . $order_item['sub_total'] . " ". $order_item['currency'] . '</li>';
+            $description = $order_item['description'] == '' ?  '' : "- " . $order_item['description'];
+            $size = $order_item['size'] == '-' ? "" : " (" . $order_item['size'] . ")";
+            $message .= "- " . $order_item['item_name'] . " " . $description . $size . " " . $order_item['quantity'] . " Nos: " . $order_item['sub_total'] . " ". $order_item['currency'] . "\n";
+            $email_message .= '<li>' . $order_item['item_name'] . " " . $description . $size . " " . $order_item['quantity'] . " Nos: " . $order_item['sub_total'] . " ". $order_item['currency'] . '</li>';
             $total += $order_item['sub_total'];
         }
 
@@ -272,6 +241,16 @@ class OrderController extends BaseController
         $message .= "Total = " . $total . " " . $order_items[0]['currency'] . "\n";
 
         $sms_message .= $message . "\n";
+
+        $message .= "\nPlease credit our bank account with the total amount so that we can book your rooms\n";
+        $message .= "Bank: Bank of Ceylon\n";
+        $message .= "Branch: Tangalle\n";
+        $message .= "Account No: 85807772";
+
+        $email_message .= '<p>Please credit our bank account with the total amount so that we can book your rooms</p>';
+        $email_message .= '<p>Bank: Bank of Ceylon</p>';
+        $email_message .= '<p>Branch: Tangalle</p>';
+        $email_message .= '<p>Account No: 85807772</p>';
 
         try{
             $smsGateway = new SmsGateway();
@@ -288,20 +267,7 @@ class OrderController extends BaseController
         # Complete the order only when all getOrderID is done
         $order_model->completeOrder($data->query->sender);
 
-        $reply = new stdClass();
-
-        $reply->message = $message;
-
-        $responseData = json_encode(array(
-            'replies' => array(
-                $reply
-            )
-        ));
-
-        $this->sendOutput(
-            $responseData,
-            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-        );
+        $this->sendResponse($message);
     }
 
     public function rooms_menuAction(){
@@ -312,31 +278,8 @@ class OrderController extends BaseController
         $wa_request_model = new WARequestModel();
         $wa_request_model->store_request($data->query->sender, $data->query->ruleId, $data->query->message);
 
-        $order_model = new OrderModel();
-        # Get rooms
-        $menu_items = $order_model->getMenuItems(2);
-
-        $menu = "Here is the list of rooms we have for you. Please enter the code of your room choice. \n";
-
-        foreach ($menu_items as $menu_item)
-        {
-            $menu .= "[" . $menu_item['code'] . "] " . $menu_item['item_name'] . " (" . $menu_item['size'] . ") - " . $menu_item['currency'] . " " . $menu_item['unit_price'] . "\n";
-        }
-
-        $reply = new stdClass();
-        $reply->message = $menu;
-
-        $responseData = json_encode(array(
-            'replies' => array(
-                $reply
-            )
-        ));
-
-        $this->sendOutput(
-            $responseData,
-            array('Content-Type: application/json', 'HTTP/1.1 200 OK')
-        );
-
+        $message = $this->getMenuItemsListingMessage(2);
+        $this->sendResponse($message);
     }
 
     public function quantityAction()
@@ -437,8 +380,8 @@ class OrderController extends BaseController
         $message .= "Total = " . $total . " " . $order_items[0]['currency'] . "\n";
         $sms_message .= $message;
         $message .= "Please enter your preferred payment method ?\n";
-        $message .= "[1] Pay on delivery\n";
-        $message .= "[2] Bank transfer";
+        $message .= "1. Pay on delivery\n";
+        $message .= "2. Bank transfer";
 
         $reply = new stdClass();
         $reply->message = $message;
