@@ -1,0 +1,13 @@
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/notifylk/notify-php.git"
+    }
+  ],
+  "require": {
+    "notifylk/notify-php": "*@dev",
+    "phpmailer/phpmailer": "^6.6",
+    "swiftmailer/swiftmailer": "^6.0"
+  }
+}
