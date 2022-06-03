@@ -9,7 +9,6 @@ class SmsGateway
         $user_id = NOTIFY_LK_USER_ID; // string | API User ID - Can be found in your settings page.
         $api_key = NOTIFY_LK_API_KEY; // string | API Key - Can be found in your settings page.
         $to = $this->getValidContact($recipient);
-        \Logger::info('to number: ' . $to);
         $sender_id = NOTIFY_LK_SENDER_ID; // string | This is the from name recipient will see as the sender of the SMS. Use \\\"NotifyDemo\\\" if you have not ordered your own sender ID yet.
         $contact_fname = ""; // string | Contact First Name - This will be used while saving the phone number in your Notify contacts (optional).
         $contact_lname = ""; // string | Contact Last Name - This will be used while saving the phone number in your Notify contacts (optional).

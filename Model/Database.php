@@ -17,6 +17,13 @@ class Database
         }
     }
 
+    /**
+     * Returns data for a select query
+     * @param string $query
+     * @param array $params
+     * @return bool|mixed
+     * @throws Exception
+     */
     public function select($query = "" , $params = [])
     {
         try {
@@ -30,6 +37,13 @@ class Database
         return false;
     }
 
+    /**
+     * Execute a given query
+     * @param string $query
+     * @param array $params
+     * @return mysqli_stmt
+     * @throws Exception
+     */
     private function executeStatement($query = "" , $params = [])
     {
         try {
