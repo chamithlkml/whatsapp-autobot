@@ -494,7 +494,7 @@ class OrderModel extends Database
     public function setItemPrice($code, $price)
     {
         $stmt = $this->connection->prepare("UPDATE whatsapp_menu_items SET unit_price = ? where code = ?");
-        
+
         $q_price = $price;
         $q_code = $code;
         $stmt->bind_param("dd", $q_price,$q_code);
