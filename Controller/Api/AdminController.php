@@ -1,9 +1,15 @@
 <?php
 
-
+/*
+ * Administrator related APIs
+ */
 class AdminController extends BaseController
 {
 
+    /**
+     * Creates a food/rooms category
+     * @throws Exception
+     */
     public function create_categoryAction()
     {
         $data = json_decode(file_get_contents("php://input"));

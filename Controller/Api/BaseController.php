@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Base controller having common used controller methods
+ * Class BaseController
+ */
 class BaseController
 {
     public function __construct()
@@ -16,6 +19,9 @@ class BaseController
         $this->sendOutput('', array('HTTP/1.1 404 Not Found'));
     }
 
+    /**
+     * Validating request by headers
+     */
     public function validate_request()
     {
         if($_SERVER['PHP_AUTH_USER'] != BASIC_AUTH_USER || $_SERVER['PHP_AUTH_PW'] != BASIC_AUTH_PASSWORD || $_SERVER['HTTP_X_APP_KEY'] != APP_KEY){
@@ -66,6 +72,10 @@ class BaseController
         exit;
     }
 
+    /**
+     * Standard response
+     * @param $message
+     */
     protected function sendResponse($message)
     {
         $reply = new stdClass();
@@ -83,6 +93,10 @@ class BaseController
         );
     }
 
+    /**
+     * Send error response
+     * @param $errors
+     */
     protected function sendError($errors)
     {
             http_response_code(400);
@@ -97,6 +111,12 @@ class BaseController
             echo json_encode(array("replies" => $replies));
     }
 
+    /**
+     * Returns menu items listing message
+     * @param $type
+     * @return string
+     * @throws Exception
+     */
     protected function getMenuItemsListingMessage($type)
     {
         $food_model = new OrderModel();
@@ -125,6 +145,13 @@ class BaseController
         return $message;
     }
 
+    /**
+     * Validate input data
+     * @param $message
+     * @param $action
+     * @param $chunks_count
+     * @return stdClass
+     */
     protected function validate_input($message, $action, $chunks_count)
     {
         $response = new stdClass();
@@ -148,23 +175,15 @@ class BaseController
         }
     }
 
+    /**
+     * Validate input for valid email
+     * @param $input
+     * @throws Exception
+     */
     protected function validate_email($input)
     {
         if (!filter_var($input, FILTER_VALIDATE_EMAIL)) {
             throw new Exception('Invalid email');
-        }
-    }
-
-    protected function getCategoriesListMessage($sender)
-    {
-        $message = "";
-
-        $order_model = new OrderModel();
-        $categories = $order_model->getCategories();
-
-        foreach($categories as $category)
-        {
-
         }
     }
 }
