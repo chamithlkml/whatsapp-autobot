@@ -1,9 +1,16 @@
 <?php
 
-
+/**
+ * Orders related controller
+ * Class OrderController
+ */
 class OrderController extends BaseController
 {
 
+    /**
+     * Select option endpoint
+     * @throws Exception
+     */
     public function select_optionAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -23,7 +30,7 @@ class OrderController extends BaseController
             $this->sendResponse("Please enter your name.");
         }else if($customer_choice == 4)
             {
-                $message = "Call 0472240299 or send an email to info@resthousetngalle.com. We will reach out to you as soon as possible. Thank you!";
+                $message = "Call " . RECEPTION_CONTACT_NO . " or send an email to " . RECEPTION_EMAIL . ". We will reach out to you as soon as possible. Thank you!";
                 $this->sendResponse($message);
             }else
                 {
@@ -31,6 +38,10 @@ class OrderController extends BaseController
                 }
     }
 
+    /**
+     * Enter your name endpoint
+     * @throws Exception
+     */
     public function nameAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -45,7 +56,10 @@ class OrderController extends BaseController
 
     }
 
-
+    /**
+     * Set name endpoint
+     * @throws Exception
+     */
     public function set_nameAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -75,6 +89,10 @@ class OrderController extends BaseController
 
     }
 
+    /**
+     * Confirm food/drink or rooms request endpoint
+     * @throws Exception
+     */
     public function choiceAction()
     {
 
@@ -95,6 +113,10 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
+    /**
+     * Set name and request for the address
+     * @throws Exception
+     */
     public function addressAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -108,6 +130,10 @@ class OrderController extends BaseController
         $this->sendResponse("Please enter your delivery address");
     }
 
+    /**
+     * Create Order endpoint
+     * @throws Exception
+     */
     public function emailAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -132,6 +158,10 @@ class OrderController extends BaseController
         );
     }
 
+    /**
+     * Rooms endpoint to set email to order
+     * @throws Exception
+     */
     public function roomsAction(){
         // get posted data
         $data = json_decode(file_get_contents("php://input"));
@@ -148,6 +178,10 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
+    /**
+     * Ask for room quantity endpoint
+     * @throws Exception
+     */
     public function room_quantityAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -161,7 +195,7 @@ class OrderController extends BaseController
         $code = $data->query->message;
         $menu_item = $order_model->getMenuItemByCode($code);
 
-        $reply = new stdClass();
+
         $description = $menu_item['description'] == "" ? "" : " - " . $menu_item['description'];
         $size = $menu_item['size'] == '-' ? "":" (" . $menu_item['size'] . ")";
         $message = "How many " . $menu_item['item_name'] . $description . $size . "(s) do you need.?";
@@ -169,6 +203,10 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
+    /**
+     * Set item quantity and request for see the menu or complete reservation
+     * @throws Exception
+     */
     public function add_roomAction(){
         $data = json_decode(file_get_contents("php://input"));
 
@@ -199,6 +237,10 @@ class OrderController extends BaseController
 
     }
 
+    /**
+     * Complete room reservation order
+     * @throws Exception
+     */
     public function complete_room_reservationAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -270,6 +312,10 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
+    /**
+     * Return the rooms menu
+     * @throws Exception
+     */
     public function rooms_menuAction(){
         // get posted data
         $data = json_decode(file_get_contents("php://input"));
@@ -282,6 +328,10 @@ class OrderController extends BaseController
         $this->sendResponse($message);
     }
 
+    /**
+     * Add order item and request for quantity
+     * @throws Exception
+     */
     public function quantityAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -310,6 +360,10 @@ class OrderController extends BaseController
         );
     }
 
+    /**
+     * Set item quantity and request for see the menu or complete order
+     * @throws Exception
+     */
     public function itemAction(){
         $data = json_decode(file_get_contents("php://input"));
 
@@ -340,6 +394,10 @@ class OrderController extends BaseController
 
     }
 
+    /**
+     * Returns menu items list
+     * @throws Exception
+     */
     public function menuAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -353,6 +411,10 @@ class OrderController extends BaseController
 
     }
 
+    /**
+     * Confirm food/drink order
+     * @throws Exception
+     */
     public function confirmAction()
     {
         $data = json_decode(file_get_contents("php://input"));
@@ -406,19 +468,5 @@ class OrderController extends BaseController
             array('Content-Type: application/json', 'HTTP/1.1 200 OK')
         );
 
-    }
-
-    private function getOrderItemField($item_label, $value)
-    {
-        $field = $value;
-
-        for($i=0;$i<strlen($item_label);$i++)
-        {
-            $field .= " ";
-        }
-
-        $field .= "|";
-
-        return $field;
     }
 }

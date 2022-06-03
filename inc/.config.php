@@ -22,3 +22,6 @@ define('MAIL_USERNAME', 'user@host.com');
 define('MAIL_PASSWORD', 'asdfasdfasdf');
 define('MAIL_PORT', 465);
 define('MAIL_FROM_NAME', 'From Name');
+
+define('RECEPTION_CONTACT_NO', 'XXXXXXXXXX');
+define('RECEPTION_EMAIL', 'xxxc@yyyy.com');
