@@ -1,3 +1,5 @@
 inc/config.php
 .idea
 *.log
+/Lib/vendor
+/Lib/composer.lock
