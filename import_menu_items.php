@@ -14,19 +14,19 @@ try{
     $spreadsheetItems = $reader->load("./xlsx/Items.xlsx");
 
     $sheetDataItems = $spreadsheetItems->getActiveSheet()->toArray();
-    // print_r($sheetDataItems); 
     
 
     $categories =$category_model->getAllCategory();
     unset($sheetDataItems[0]);
-    // print_r($sheetDataItems[0]);
+    
     $keys = array_column($categories, 'category_name');
 
     foreach($sheetDataItems as $row){
-        // print_r($row);
         $index = array_search($row[0], $keys);
-        // print_r($categories[$index]["id"]);
-        // $category_model->getCategoryId($row[0]);
+
+        if(!isset($categories[$index])){
+            throw new Exception("Category id not found'");
+        }
 
         $category_id=(int)$categories[$index]["id"];
         $item_name=$row[1]?$row[1]:"";
