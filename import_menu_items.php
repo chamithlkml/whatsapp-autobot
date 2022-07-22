@@ -24,8 +24,8 @@ try{
     foreach($sheetDataItems as $row){
         $index = array_search($row[0], $keys);
 
-        if(!$categories[$index]["id"]){
-            throw new Exception('Category id not found');
+        if(!isset($categories[$index])){
+            throw new Exception("Category id not found'");
         }
 
         $category_id=(int)$categories[$index]["id"];
